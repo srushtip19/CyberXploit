@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Dashboard</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<!-- ANIMATED GLOW -->
+
+<div class="circle circle1"></div>
+<div class="circle circle2"></div>
+<div class="circle circle3"></div>
+
+<!-- SIDEBAR -->
+
+<div class="sidebar">
+
+    <h1>⚡ CyberXploit</h1>
+
+    <ul>
+
+        <li onclick="showModule('portModule')">
+            Port Scanner
+        </li>
+
+        <li onclick="showModule('vulnModule')">
+            Vulnerability Scanner
+        </li>
+
+        <li onclick="showModule('passwordModule')">
+            Password Checker
+        </li>
+
+        <li onclick="showModule('osintModule')">
+            OSINT Tool
+        </li>
+
+    </ul>
+
+</div>
+
+<!-- MAIN -->
+
+<div class="main">
+
+    <div class="topbar">
+
+        <img src="{{ url_for('static', filename='images/hacker.gif') }}"
+        width="180">
+
+        <h2>
+            Advanced Security Dashboard
+        </h2>
+
+    </div>
+
+    <!-- SELECT TESTING -->
+
+    <div class="card">
+
+        <h3>Select Testing Method</h3>
+
+        <select onchange="changeTestingMethod(this.value)">
+
+            <option value="">
+                Choose Testing Method
+            </option>
+
+            <option value="portModule">
+                Port Scanning
+            </option>
+
+            <option value="vulnModule">
+                Vulnerability Scanner
+            </option>
+
+            <option value="passwordModule">
+                Password Analysis
+            </option>
+
+            <option value="osintModule">
+                OSINT Intelligence
+            </option>
+
+        </select>
+
+    </div>
+
+    <!-- PORT SCANNER -->
+
+    <div id="portModule" class="card module active">
+
+        <h3>Port Scanner</h3>
+
+        <input type="text"
+        id="target"
+        placeholder="127.0.0.1">
+
+        <button onclick="scanPorts()">
+
+            Start Scan
+
+        </button>
+
+        <div id="portResult" class="result"></div>
+
+    </div>
+
+    <!-- VULN SCANNER -->
+
+    <div id="vulnModule" class="card module">
+
+        <h3>Vulnerability Scanner</h3>
+
+        <input type="text"
+        id="url"
+        placeholder="https://example.com">
+
+        <button onclick="scanVuln()">
+
+            Scan Website
+
+        </button>
+
+        <div id="vulnResult" class="result"></div>
+
+    </div>
+
+    <!-- PASSWORD CHECKER -->
+
+    <div id="passwordModule" class="card module">
+
+        <h3>Password Strength Checker</h3>
+
+        <input type="text"
+        id="password"
+        placeholder="Enter Password">
+
+        <button onclick="checkPassword()">
+
+            Analyze Password
+
+        </button>
+
+        <div id="passwordResult" class="result"></div>
+
+    </div>
+
+    <!-- OSINT -->
+
+    <div id="osintModule" class="card module">
+
+        <h3>OSINT Intelligence Gathering</h3>
+
+        <input type="text"
+        id="domain"
+        placeholder="google.com">
+
+        <button onclick="scanOSINT()">
+
+            Collect Information
+
+        </button>
+
+        <div id="osintResult" class="result"></div>
+
+    </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+
+</html>

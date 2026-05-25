@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CyberXploit</title>
+
+    <!-- CSS -->
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body class="landing-body">
+
+    <!-- FLOATING ANIMATED CIRCLES -->
+
+    <div class="circle circle1"></div>
+    <div class="circle circle2"></div>
+    <div class="circle circle3"></div>
+
+    <!-- MAIN LANDING CONTAINER -->
+
+    <div class="landing-container">
+
+        <!-- HACKER IMAGE -->
+
+        <img
+        src="{{ url_for('static', filename='images/hacker.gif') }}"
+        class="logo">
+
+        <!-- TITLE -->
+
+        <h1 class="glow">
+            ⚡ CyberXploit
+        </h1>
+
+        <!-- SUBTITLE -->
+
+        <h2 class="subtitle">
+            Advanced Penetration Testing Toolkit
+        </h2>
+
+        <!-- DESCRIPTION -->
+
+        <p class="description">
+            Multi-Module Security Testing Framework
+        </p>
+
+        <!-- BUTTON -->
+
+        <a href="/dashboard" class="launch-btn">
+
+            Launch Dashboard
+
+        </a>
+
+    </div>
+
+    <!-- MATRIX ANIMATION -->
+
+    <canvas id="matrixCanvas"></canvas>
+
+    <!-- JS -->
+
+    <script src="{{ url_for('static', filename='animations/matrix.js') }}"></script>
+
+</body>
+
+</html>

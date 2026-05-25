@@ -1,0 +1,12 @@
+flask
+flask_sqlalchemy
+flask_login
+requests
+beautifulsoup4
+scapy
+python-nmap
+paramiko
+whois
+dnspython
+fpdf
+pyshark
